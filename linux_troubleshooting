@@ -1,0 +1,127 @@
+# Linux troubleshooting tools cheat sheet
+# v 1.0.0
+# author: Melita Mihaljevic
+# date: Dec, 2012
+# comment: please see manual pages for more info
+
+-------------------------------------------------------------------------------------
+# system (CPU, memory, disk I/0)
+
+** dmesg ** 	- prints the message buffer of the kernel 
+$ dmesg -c   								- clear message buffer
+$ dmesg |grep -i [filter] 	- use with grep for filtering output	
+$ dmesg |less								- use with less for easier reading
+
+
+** uptime ** - how long the system has been running and load average
+$ uptime - returns: the current time, how long the system has been running, 
+										how many users are currently logged on, and the system 
+										load averages for the past 1, 5, and 15 minutes
+
+
+** w ** - show who is logged in and what they are doing
+$ w		- displays information about the users currently on the machine, and their processes 
+
+
+** vmstat ** - reports information about processes, memory, paging, block IO, traps, disks and cpu activity
+$ vmstat [delay] - virtual memory statistics repeated after delay 
+$ vmstat -a 	- active/inactive memory
+$ vmstat -s		- memory statistics - total, active, inactive, swap, buffer,...
+$ vmstat -d		- disk statistics
+$ vmstat -D		- summary statistics about disk activity - totaly read, written, merged, ...
+$ vmstat -p [partition] - partition statistics 
+
+
+** top ** - real time view of running system
+$ top - running processes sorted by CPU usage plus overall CPU, memory view 
+
+
+** procinfo ** - system statistics gathered from /proc
+$ procinfo
+
+
+** mpstat ** - processors related statistics
+$ mpstat 				- statistics for all processors summarized 
+$ mpstat - A 		- statistics for all processors separated
+
+
+** free ** - Display amount of free and used memory in the system
+$ free 				- displays the total amount of free and used physical and swap memory in the system
+$ free -s 5 	- continuously displayed statistics after a delay of 5 seconds
+
+** slabtop ** - display kernel slab cache information in real time
+$ slabtop			- displays a listing of the top caches sorted by one of the listed sort criteria
+
+
+** ipcs **  - provide information on ipc facilities
+$ ipcs - 		- information about shared memory segment, semaphores and message queue
+$ ipcs -m 	- shared memory segment
+$ ipcs -u		- summary information
+
+
+** lsof ** 	- list of open files
+$ lsof 			- complete list of open files
+
+----------------------------------------------------------------------------------------
+# application/process related
+
+** ps **	- displays information about a selection of the active processes
+$ ps -aux 	- see every process in the system 
+$ ps -axj		- list of daemon processes
+
+
+** cat /proc/<PID>/status - specific process status 
+
+
+** strace ** - traces the system call that program makes while executing
+$ strace ls -l 				- system calls while executing ls -l
+$ strace -c ls -l 		- summary for system calls while executing ls -l
+$ strace -p [PID]			- attach to specific process [PID] and track system calls
+
+
+** ltrace ** - traces all calls that app makes to library
+$ lstrace ls -l 			- library calls while executing ls -l
+$ ltrace -c ls -l 		- summary for library calls while executing ls -l
+$ ltrace -p [PID]			- attach to specific process [PID] and track lib calls
+
+
+** time ** - run programs and summarize system resource usage
+$ time ls -l 	- execution time, user time and system time of ls -l
+
+----------------------------------------------------------------------------------------
+# network
+
+** ifconfig ** 	- configure network interfaces and output configuration information 
+$ ifconfig 			- prints configuration information for each interface
+
+
+** ip ** - show / manipulate routing, devices, policy routing and tunnels
+$ ip link 	- displays information on network devices makes a typescript of everything printed on your terminal 
+$ ip route	- displays routing table
+$	ip addr		- displays address information for each network device
+
+
+** netstat ** - Print network connections, routing tables, interface statistics
+$ netstat				- displays a list of open sockets
+$ netstat -t 		- displays a list of TCP sockets
+$ netstat -u 		- displays a list of UDP sockets
+$ netstat -r 		- displays routing table
+$ netstat -s 		- displays protocols statistics
+
+--------------------------------------------------------------------------------------------
+# other helpful commands
+
+** uname ** - prints system information
+$ uname -a 		- prints all system information in order 
+								(kernel name, node name, kernel version, machine, operating system,..) 
+
+
+
+** ldd ** -	print shared library dependencies
+$ ldd ./a.out - prints shared libraries for a.out
+
+
+* a typescript of everything printed on your terminal watch ** - execute a program periodically, showing output
+$ watch -n 2 uptime 		- executes uptime every 2 seconds  
+
+	 
