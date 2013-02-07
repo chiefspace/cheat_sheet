@@ -29,7 +29,23 @@ $ git commit -m 'message about commit'
 $ git clone [url]
 $ git://github.com/example/example.git
 
-#
+# check the status of files
+$ git status
 
+# get diff
+$ git diff
+$ git diff --staged     - what is staged and will go into next commit
+
+# remove file
+$ git rm <filename>
+
+# keep the file in your working tree but remove it from your staging area
+$ git rm --cached <filename>
+
+# rename file
+$ git mv file_from file_to
+
+# view commit history
+$ git log
 
 
