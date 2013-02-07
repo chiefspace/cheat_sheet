@@ -41,42 +41,42 @@ $ procinfo
 
 
 ** mpstat ** - processors related statistics
-$ mpstat 				- statistics for all processors summarized 
-$ mpstat - A 		- statistics for all processors separated
+$ mpstat 		    - statistics for all processors summarized 
+$ mpstat -A 		- statistics for all processors separated
 
 
 ** free ** - Display amount of free and used memory in the system
-$ free 				- displays the total amount of free and used physical and swap memory in the system
+$ free 			- displays the total amount of free and used physical and swap memory in the system
 $ free -s 5 	- continuously displayed statistics after a delay of 5 seconds
 
 ** slabtop ** - display kernel slab cache information in real time
-$ slabtop			- displays a listing of the top caches sorted by one of the listed sort criteria
+$ slabtop	  - displays a listing of the top caches sorted by one of the listed sort criteria
 
 
 ** ipcs **  - provide information on ipc facilities
-$ ipcs - 		- information about shared memory segment, semaphores and message queue
+$ ipcs - 	- information about shared memory segment, semaphores and message queue
 $ ipcs -m 	- shared memory segment
-$ ipcs -u		- summary information
+$ ipcs -u	- summary information
 
 
 ** lsof ** 	- list of open files
-$ lsof 			- complete list of open files
+$ lsof 		- complete list of open files
 
 ----------------------------------------------------------------------------------------
 # application/process related
 
 ** ps **	- displays information about a selection of the active processes
 $ ps -aux 	- see every process in the system 
-$ ps -axj		- list of daemon processes
+$ ps -axj	- list of daemon processes
 
 
 ** cat /proc/<PID>/status - specific process status 
 
 
 ** strace ** - traces the system call that program makes while executing
-$ strace ls -l 				- system calls while executing ls -l
+$ strace ls -l 			- system calls while executing ls -l
 $ strace -c ls -l 		- summary for system calls while executing ls -l
-$ strace -p [PID]			- attach to specific process [PID] and track system calls
+$ strace -p [PID]		- attach to specific process [PID] and track system calls
 
 
 ** ltrace ** - traces all calls that app makes to library
