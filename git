@@ -1,0 +1,35 @@
+# Git cheat sheet
+# made while reading Pro Git book 
+# http://git-scm.com/book
+# v 1.0.0
+# author: Melita Mihaljevic
+# date Feb, 2013
+# comment: this is only cheat sheet - read the book for more info
+
+# add username and e-mail address
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+
+# check settings
+$ git config --list
+
+# get help <verb> - show git man page for <verb>
+$ git help add      - shows git man pages for add
+
+# initialize git repo
+$ git init
+
+# add files to repo
+$ git add <filename>
+
+# commit changes
+$ git commit -m 'message about commit'
+
+# clone project
+$ git clone [url]
+$ git://github.com/example/example.git
+
+#
+
+
+
