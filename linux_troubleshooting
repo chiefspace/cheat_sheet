@@ -1,7 +1,7 @@
 # Linux troubleshooting tools cheat sheet
-# v 1.0.0
+# v 1.0.1
 # author: Melita Mihaljevic
-# date: Dec, 2012
+# date: Feb, 2013
 # comment: please see manual pages for more info
 
 -------------------------------------------------------------------------------------
@@ -42,7 +42,7 @@ $ procinfo
 
 ** mpstat ** - processors related statistics
 $ mpstat 	        - statistics for all processors summarized 
-$ mpstat - A 		- statistics for all processors separated
+$ mpstat -A 		- statistics for all processors separated
 
 
 ** free ** - Display amount of free and used memory in the system
@@ -63,6 +63,9 @@ $ ipcs -u	- summary information
 ** lsof ** 	- list of open files
 $ lsof 		- complete list of open files
 
+
+** iostat ** - monitoring system input/output device loading 
+$ iostat
 ----------------------------------------------------------------------------------------
 # application/process related
 
@@ -116,12 +119,63 @@ $ netstat -s 	- displays protocols statistics
 $ uname -a 	- prints all system information in order 
 		 (kernel name, node name, kernel version, machine, operating system,..) 
 
-
 ** ldd ** -	print shared library dependencies
-$ ldd ./a.out - prints shared libraries for a.out
+$ ldd ./a.out 	- prints shared libraries for a.out
 
 
-* a typescript of everything printed on your terminal watch ** - execute a program periodically, showing output
-$ watch -n 2 uptime 		- executes uptime every 2 seconds  
+** watch ** - execute a program periodically, showing output
+$ watch -n 2 uptime 	- executes uptime every 2 seconds  
+
+
+** find ** - search for files in a directory hierarchy
+$ find -p 		- never follow symbolic links (default)
+$ find -L 		- follow symbolic links
+$ find -amin n 		- file accesed n minutes ago
+$ find -anewer file 	- file that was accessed more recently than it was modified
+$ find -empty 		- empty file or directory
+$ find -executable 	- matches files which are executable and directories that are searchable
+$ find -gid n		- files with given numeric group id
+$ find -inum n		- file that has inode number n
+$ find -iregex		- matches case insensitive regx
+$ find -readable	- find readable files
+
+
+** locate ** - find files by name - reads one or more db prepared by updatedb
+$ locate - by default doesn't check whether file found in db still exists 
+
+** fuser ** - identify process using files or sockets 
+$ fuser 	- display the PIDs of processes using the specified files or filesystems
+$ fuser -c 	- current directory
+$ fuser -k	- kill processes acessing the named file
+
+
+** cat **  - concatenate files and print on the standard output
+$ cat f1 f2 f3
+
+
+** tac ** - concatenate and prints files in reverse
+$ tac f1 f2 f3
+
+
+** rev ** - reverse lines of a file or files
+$ rev
+
+
+** tee ** - read from standard input and writes to stdout or files
+
+
+** kill ** - send a signal to process
+$ kill -l	- list all available signals
+$ kill -9 	- SIGKILL - cannot be blocked
+
+
+** killall ** - kill process by name
+$ killall chromiun	- kills all processes with name chromium
+
+** xargs ** - build and execute command lines from standard input
+$ ls -l|awk '{print $NF}'|xargs grep -i int
+
+
+
 
 	 
