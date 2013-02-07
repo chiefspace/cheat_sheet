@@ -48,4 +48,22 @@ $ git mv file_from file_to
 # view commit history
 $ git log
 
+# commit things you forgot with the last commit
+$ git commit --amend
+
+# unstage file
+$ git reset HEAD <filename>
+
+# unmodify a modified file
+$ git checkout -- <filename>
+
+# which remote servers you have configured
+$ git remote -v
+
+# add remote repository
+$ git remote add [shortname] [url]
+
+# fetch information from remote repository
+$ git fetch [shortname]
+
 
