@@ -66,4 +66,44 @@ $ git remote add [shortname] [url]
 # fetch information from remote repository
 $ git fetch [shortname]
 
+# automatically fetch and then merge a remote branch into your current branch
+$ git pull
+
+# automatically sets up your local master branch to track the remote master branch on the server you cloned from
+$ git clone
+
+# push to server
+$ git push [remote-name] [branch-name]
+
+# see more information about a particular remote
+$ git remote show [remote-name]
+
+# rename remote reference
+$ git remote rename name1 name2
+
+# remove remote reference
+$ git remote rm name
+
+# list available tags
+$ git tag
+
+# create annotated tag
+$ git tag -a [version] -m [message]
+
+# share tag
+$ git push origin [tagname]
+
+# create a branch and switch to it at the same time
+$ git checkout -b [branch name]
+
+# merge to master
+$ git checkout master
+$ git merge [branch name]
+$ git branch -d [branch name]   - delete after merging cause you don't need it anymore
+
+# merge tool 
+$ git mergetool
+
+
+
 
