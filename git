@@ -104,6 +104,21 @@ $ git branch -d [branch name]   - delete after merging cause you don't need it a
 # merge tool 
 $ git mergetool
 
+# delete remote branch
+$ git push [remotename] :[branch]
 
+# check for whitespace errors
+$ git diff --check
+
+# squash to a single commit
+$ git rebase -i
+
+# when was each line edited and by whom
+$ git blame
+
+# binary search through your commit history to help you identify as quickly as possible which commit introduced an issue
+$ git bisect start
+$ git bisect bad
+$ git bisect good v1.0
 
 
