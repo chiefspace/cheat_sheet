@@ -175,3 +175,7 @@ $ killall chromiun  - kills all processes with name chromium
 ** xargs ** - build and execute command lines from standard input
 $ ls -l|awk '{print $NF}'|xargs grep -i int
 
+** report on kernel panics in /var/log/messages 5 lines before and after every occurrence of the string 'panic'
+$ grep -A 5 -B 5 panic /var/log/messages
+
+
